@@ -67,11 +67,12 @@ The following are the steps you should take for the **first time running** tenso
 
 The following are the steps you should take each time you want to use tensorboard.
 1. ssh into your cc account.
-2. `cd $SCRATCH` (this is because you cannot submit jobs from your home)
-3. submit a minimal **interactive job**, `salloc --time=1:0:0 --ntasks=1 --cpus-per-task=4 --mem-per-cpu=2048M --account=<cc account identifier often starts with "def-">`
-4. launch tensorboard `tensorboard --logdir=<your_log_dir> --host 0.0.0.0 --load_fast false` (replace `<your_log_dir>` with the logdir of your project). 
-5. At this step you should see an url in your terminal, an example is "http://cdr774.int.cedar.computecanada.ca:6006". In this url "cdr" stands for **cedar** (because we logged into cedar in step 1) and 774 is the node number that we have allocated our resources from (basically we are running commands from that node or to make it simpler from that computer).
-6. go to your local computer, open your terminal (no matter Windows. MacOS or Linux) and tunnel to the node that is running the service through the provided port. In the case of our example that is `ssh -L 6006:cdr767.int.cedar.computecanada.ca:6006 username@cedar.computecanada.ca`. In case you have setup the ssh config based on our recommendation you can enter a shorter command `ssh -L 6006:cdr767.int.cedar.computecanada.ca:6006 cedar`.
+2. activate the virtual environment (N=3 on Command Sheet)
+3. `cd $SCRATCH` (this is because you cannot submit jobs from your home)
+4. submit a minimal **interactive job**, `salloc --time=1:0:0 --ntasks=1 --cpus-per-task=4 --mem-per-cpu=2048M --account=<cc account identifier often starts with "def-">`
+5. launch tensorboard `tensorboard --logdir=<your_log_dir> --host 0.0.0.0 --load_fast false` (replace `<your_log_dir>` with the logdir of your project). 
+6. At this step you should see an url in your terminal, an example is "http://cdr774.int.cedar.computecanada.ca:6006". In this url "cdr" stands for **cedar** (because we logged into cedar in step 1) and 774 is the node number that we have allocated our resources from (basically we are running commands from that node or to make it simpler from that computer).
+7. go to your local computer, open your terminal (no matter Windows. MacOS or Linux) and tunnel to the node that is running the service through the provided port. In the case of our example that is `ssh -L 6006:cdr767.int.cedar.computecanada.ca:6006 username@cedar.computecanada.ca`. In case you have setup the ssh config based on our recommendation you can enter a shorter command `ssh -L 6006:cdr767.int.cedar.computecanada.ca:6006 cedar`.
 
 ## MLFlow
 To be completed!
